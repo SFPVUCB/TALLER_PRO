@@ -12,19 +12,20 @@ POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-    "title": "SECH",
-    "detail": "HOLA SERGIO"
+    "title": "Tomar un descanso",
+    "detail": "programado para el dia viernes",
+    "status": "Pendiente"
 }
 ### Delete a task
 DELETE http://localhost:3000/tasks/3
 ### update a task
-PUT http://localhost:3000/tasks/1
+PUT http://localhost:3000/task/update/1
 Content-Type: application/json
 
 {
-    "title": "SECH9999",
-    "detail": "HOLA SERGIO"
-    
+    "title": "X",
+    "detail": "X",
+    "status": "Terminado"
 }
 
 ###

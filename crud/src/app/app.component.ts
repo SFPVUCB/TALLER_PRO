@@ -73,7 +73,7 @@ export class AppComponent {
         error => {
           console.log(error);
         });
-    // this.refresh();
+     this.refresh();
   }
 
   myValue:any;

@@ -54,19 +54,30 @@ app.delete('/tasks/:taskId', function (req, res) {
     res.send("Se elimino la tarea");
 });
 //actualizar datos
-app.put("/tasks/:id", (req, res) => {
-    const { id } = req.params;
-    const changes = req.body;
-    
-    const index = tasks.findIndex(tasks => taskId == id);
+app.put('/task/update/:taskId',jsonParser,(req,res)=>{
+    let taskId = req.params.taskId;
+    console.log(taskId)
+    function editarEstado(taskId){
+        tasks.forEach(function(currentValue,index,arr)
+        {
+            if(tasks[index].id==taskId)
+            {
+                tasks[index].title=req.body.title
+                tasks[index].detail=req.body.detail
+                tasks[index].status=req.body.status
+                res.json("{Cambio realizado con exito}");
+            }
+            else
+            {
+                res.json("{sin exito}");
 
-    if(index != -1)
-    {
-        tasks[index] = tasks;
-        res.status(200).json(tasks[index]);
-    }else{
-        res.status(404).json({message: "task does not exist"});
+            }
+        }
+        );
+        
+    
     }
+    editarEstado(taskId)
 });
 
 app.listen(3000, () => {
