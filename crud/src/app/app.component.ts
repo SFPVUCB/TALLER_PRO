@@ -9,9 +9,9 @@ export class AppComponent {
   title:string = 'TAREAS PENDIENTES ABM';
 
   employees = [
-    {name: 'Wally con amigos', position:'comenzar martes',estado:'Vigente' },
-    {name: 'Aprender Angular', position:'comenzar Julio',estado:'Vigente'},
-    {name: 'Enviar informes Auditoria', position:'terminado agosto sin errores',estado:'terminado'},
+    {titulo: 'Wally con amigos', detalle:'comenzar martes',estado:'Vigente' },
+    {titulo: 'Aprender Angular', detalle:'comenzar Julio',estado:'Vigente'},
+    {titulo: 'Enviar informes Auditoria', position:'terminado agosto sin errores',estado:'terminado'},
 
   ];
   model:any = {};
@@ -26,8 +26,8 @@ export class AppComponent {
   }
   myValue:any;
   editEmployee(i:any):void{
-    this.model2.name = this.employees[i].name;
-    this.model2.position = this.employees[i].position;
+    this.model2.titulo = this.employees[i].titulo;
+    this.model2.detalle = this.employees[i].detalle;
     this.model2.estado = this.employees[i].estado;
     this.myValue=i;
 

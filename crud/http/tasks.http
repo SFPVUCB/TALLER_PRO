@@ -16,9 +16,9 @@ Content-Type: application/json
     "detail": "HOLA SERGIO"
 }
 ### Delete a task
-DELETE http://localhost:3000/tasks/1
+DELETE http://localhost:3000/tasks/3
 ### update a task
-DELETE http://localhost:3000/tasks/1
+PUT http://localhost:3000/tasks/1
 Content-Type: application/json
 
 {

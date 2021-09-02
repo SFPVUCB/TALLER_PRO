@@ -44,21 +44,14 @@ app.get("/tasks", (req, res, next) => {
 });
 //borrar un task por id
 
-app.delete("/tasks/:taskId",(req, res)=> {
-    const { id } = req.params;
-    const deleted = tasks.find(tasks => tasks.id == id);
-
-    if(deleted)
-    {
-        console.log(deleted);
-        tasks = tasks.filter(tasks => tasks.id != id);
-        res.status(200).json(deleted);
-    }else{
-        console.log(deleted)
-        res
-        .status(404)
-        .json({message: "Channel you are looking for does not exist"});
-    }
+app.delete('/tasks/:taskId', function (req, res) {
+    var idTask = parseInt(req.params.taskId);
+    tasks.forEach(function(value,index,array){
+        if(value.id==idTask){
+            tasks.splice(index,1);
+        }
+    });
+    res.send("Se elimino la tarea");
 });
 //actualizar datos
 app.put("/tasks/:id", (req, res) => {
